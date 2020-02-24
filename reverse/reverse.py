@@ -56,14 +56,3 @@ class LinkedList:
       current = next_node  # sets current to next_node (moves loop to next node value)
       # current.next_node, previous_node, current = previous_node, current, next_node # flip arrow, flip arrow, move to next node
     self.head = previous_node  # set new head as former tail (makes the reverse!)
-
-  test = LinkedList()
-  test.add_to_head(1)
-  test.add_to_head(2)
-  test.add_to_head(3)
-  test.add_to_head(4)
-  test.add_to_head(5)
-
-  print(test.head.value)
-  test.reverse_list()
-  print(test.head.value)
