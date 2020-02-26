@@ -142,18 +142,10 @@ class RingBuffer:
         self.storage = DoublyLinkedList()
 
     def append(self, item):
-        # if self.capacity > self.storage.__len__():  # if RingBuffer has room, Add newest item to head
-        #     self.storage.add_to_head(item)
-        # else:
-        #     self.storage.remove_from_tail()
-        #     self.storage.add_to_head(item)
-        # If capacity < len(storage) add to tail
         if self.capacity > self.storage.length:
-            # Add to tail
-            self.storage.add_to_tail(item)
+            self.storage.add_to_tail(item)  # Add to tail
             self.current = self.storage.head
-        # If it has reached max capacity replace head with new val
-        else:
+        else:  # If it has reached max capacity replace head with new val
             if self.current == self.storage.tail:
                 next_oldest_node = self.storage.head
             else:
